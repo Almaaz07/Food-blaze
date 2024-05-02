@@ -5,6 +5,7 @@ import { useDispatch } from "react-redux";
 import toast from 'react-hot-toast';
 import { useAuth0 } from "@auth0/auth0-react";
 import Login_signup from "../login_signup.js";
+import Navbar from "./Navbar.js";
 
 const Menucard = ({ MenuData  }) => {
   const dispatch = useDispatch()
@@ -17,7 +18,7 @@ const Menucard = ({ MenuData  }) => {
   return (
     
     <>
-    {isAuthenticated?<section className="main-card--cointainer">
+    <section className="main-card--cointainer">
         {MenuData.map((curelement) => {
 
           const {id , name, amount,category, image, description} = curelement;
@@ -37,7 +38,7 @@ const Menucard = ({ MenuData  }) => {
                     <div className="card-read"> Read</div>
                   </div>
                   <img src={image} alt="images" className="card-media" />
-                  <h3>{amount}</h3>
+                  <h3 className="text-xl font-bold m-4 "> ₹{amount}</h3>
 
                   <button className="card-tag subtle" onClick={()=>send(curelement)}> Add to Cart</button>
                 </div>
@@ -45,7 +46,7 @@ const Menucard = ({ MenuData  }) => {
             </>
           );
         })}
-      </section>: <Login_signup/>}
+      </section>
       
     </>
   );

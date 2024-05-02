@@ -1,8 +1,4 @@
 {
-  "homepage": "https://Almaaz07.github.io/food_ordering_app",
-  "name": "restaurant_app",
-  "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@auth0/auth0-react": "^2.2.4",
     "@reduxjs/toolkit": "^2.0.1",
@@ -10,6 +6,7 @@
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "axios": "^1.6.7",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hot-toast": "^2.4.1",
@@ -22,9 +19,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-     "deploy": "gh-pages -d build"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "gh-pages": "^6.1.1",
     "tailwindcss": "^3.3.6"
   }
 }

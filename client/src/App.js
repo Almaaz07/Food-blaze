@@ -8,6 +8,8 @@ import Cart from './components/basics/cart';
 import { Toaster } from 'react-hot-toast';
 import Cancel from './components/cancel';
 import Success from './components/success';
+import Register from './components/register';
+import Login_signup from './components/login_signup';
 // import Login_signup from './components/login_signup';
 
 const App =()=> {
@@ -17,7 +19,10 @@ const App =()=> {
     
 <Routes>
   {/* <Route path='/' element ={<Login_signup/>}/> */}
-  <Route path='/' element ={<Resturant/>}/>
+  
+  <Route path='/' element ={<Login_signup/>}/>
+  <Route path='/res' element ={<Resturant/>}/>
+  <Route path='/Register' element ={<Register/>}/>
   <Route path='/Cart' element ={<Cart/>}/>
   <Route path='/success' element ={<Success/>}/>
   <Route path='/cancel' element ={<Cancel/>}/>

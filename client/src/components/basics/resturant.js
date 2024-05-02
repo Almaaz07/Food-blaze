@@ -12,8 +12,6 @@ const unqList = [
     })
   ),];
 
-console.log(unqList);
-
 const Resturant = () => {
 
   const [MenuData, setMenuData] = useState(Menu);
