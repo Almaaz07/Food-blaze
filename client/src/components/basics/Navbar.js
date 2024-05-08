@@ -3,6 +3,8 @@ import Menu from "./menueapi.js";
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import cart from "../Assets/cart.svg";
+import { logo } from "../Assets/logo.js";
 
 const Navbar = ({ filterItem, setMenuData, MenuList }) => {
   const { carts } = useSelector((state) => state.allCart);
@@ -10,7 +12,10 @@ const Navbar = ({ filterItem, setMenuData, MenuList }) => {
   return (
     <>
      
-        <div className="flex items-center justify-center">
+        <div className="px-5 flex items-center justify-between">
+<div> <img src={logo} className="w-[100px] h-[100px]" alt="" />
+  
+  </div>
           <nav className="navbar">
             <div className="btn-group flex">
               {MenuList.map((curelement) => {
@@ -28,26 +33,29 @@ const Navbar = ({ filterItem, setMenuData, MenuList }) => {
               })}
             </div>
           </nav>
+<div>
+        <div className="flex justify-end  gap-2">
+            <div className="ml-8 rounded-3xl bg-gray-300 pl-5 w-[90px] h-[38px] flex items-center justify-center">
+              <p>{isAuthenticated?user.name: null}</p>
+            </div>
 
-          <div className="flex justify-end  gap-4 ml-7 mt-7">
-            {/* <div className="ml-8  rounded-3xl bg-gray-300 w-[90px] h-[30px] flex  items-center justify-center">
-
-              {isAuthenticated?user.name: null}
-            </div> */}
-
-            <div className=" rounded-3xl bg-gray-300 w-[90px] h-[30px] flex justify-center  hover:bg-gray-500">
+            <div className=" rounded-3xl bg-gray-300 w-[90px] h-[38px] flex justify-center  hover:bg-gray-500">
               
-                <button onClick={(e) => logout()}>Logout</button>
+                <button onClick={(e) => logout()} className="logout">Logout</button>
               
             </div>
-          </div>
-
-          <NavLink to="/cart">
-            <div className="flex justify-center mt-6 ml-[200px] bg-slate-400 w-[100px] items-center text-center rounded-3xl h-[40px] hover:bg-gray-500">
-              <button className="text-3xl ">Cart</button>
+            <NavLink to="/cart">
+            <div className="flex  rounded-3xl bg-white w-[90px] h-[38px] justify-center">
+            <img src={cart} alt=""className="bg-white w-[35px]" />
             </div>
           </NavLink>
+          </div> 
+
+           
+       </div>
+          
         </div>
+       
       
     </>
   );

@@ -102,6 +102,39 @@ const Menu = [
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
     
       },
+    {
+      id: 10,
+      image: "./images/download.jpg",
+      name: "paw bhaji",
+      category: "brunch",
+      amount: 60,
+      qnty:0,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+    
+      },
+    {
+      id: 10,
+      image: "./images/download.jpg",
+      name: "paw bhaji",
+      category: "brunch",
+      amount: 60,
+      qnty:0,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+    
+      },
+    {
+      id: 10,
+      image: "./images/download.jpg",
+      name: "paw bhaji",
+      category: "brunch",
+      amount: 60,
+      qnty:0,
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+    
+      },
 
     {
       id: "11",
