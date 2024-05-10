@@ -18,8 +18,6 @@ const App =()=> {
 
     
 <Routes>
-  {/* <Route path='/' element ={<Login_signup/>}/> */}
-  
   <Route path='/' element ={<Login_signup/>}/>
   <Route path='/res' element ={<Resturant/>}/>
   <Route path='/Register' element ={<Register/>}/>

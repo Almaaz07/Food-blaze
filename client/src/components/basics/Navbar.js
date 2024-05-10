@@ -5,10 +5,15 @@ import { NavLink } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import cart from "../Assets/cart.svg";
 import { logo } from "../Assets/logo.js";
+import toast from "react-hot-toast";
 
 const Navbar = ({ filterItem, setMenuData, MenuList }) => {
   const { carts } = useSelector((state) => state.allCart);
   const { user, loginWithRedirect, logout, isAuthenticated,  authenticated } = useAuth0();
+  const handleLOgout =()=>{
+    logout()
+    toast.success("Logout Succesfully")
+  }
   return (
     <>
      
@@ -35,13 +40,14 @@ const Navbar = ({ filterItem, setMenuData, MenuList }) => {
           </nav>
 <div>
         <div className="flex justify-end  gap-2">
-            <div className="ml-8 rounded-3xl bg-gray-300 pl-5 w-[90px] h-[38px] flex items-center justify-center">
-              <p>{isAuthenticated?user.name: null}</p>
+            <div className="ml-8 rounded-3xl  pl-5 w-[90px] h-[38px] flex items-center justify-center">
+              {/* {authenticated?} */}
+              <p>{isAuthenticated?user.name: ""}</p>
             </div>
 
             <div className=" rounded-3xl bg-gray-300 w-[90px] h-[38px] flex justify-center  hover:bg-gray-500">
               
-                <button onClick={(e) => logout()} className="logout">Logout</button>
+                <button onClick={handleLOgout} className="logout">Logout</button>
               
             </div>
             <NavLink to="/cart">

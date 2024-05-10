@@ -41,7 +41,7 @@ const handleChange = (e)=>{
 
   return (
  <>
-<div className="flex  w-full h-screen  justify-center items-center ">
+<div className="flex  w-full h-screen shadow-2xl bg-[url('./assets/img/login.jpg')] bg-cover bg-no-repeat justify-center items-center ">
 <form>
  <div className=" w-full h-screen  flex justify-center items-center">
       <div className=" w-[390px] backdrop-blur-3xl rounded-l-3xl shadow-2xl h-[470px]  items-center flex flex-col">
@@ -52,16 +52,16 @@ const handleChange = (e)=>{
           type="text"
           name="Username"
           onChange={handleChange}
-          className="px-3 text-xl font-medium text-white bg-transparent border-2 h-12 w-[290px] rounded-3xl "
+          className="px-3 text-xl font-medium border-blue-800 bg-transparent border-2 outline-none h-12 w-[290px] rounded-3xl "
         />
         <br />
         <label className="font-semibold text-xl">Password</label> <br />
-<div className="flex text-xl font-medium text-white bg-transparent border-2 h-12 w-[290px] rounded-3xl ">
+<div className="flex text-xl font-medium text-white border-blue-800 bg-transparent border-2 h-12 w-[290px] rounded-3xl ">
         <input type={!show ? "text" : "password"}  onChange={handleChange}  name="Password" className=" px-3 text-l font-medium text-white bg-transparent outline-none h-12 w-[250px] rounded-3xl "/>
           <span className="flex items-center justify-center "><img src={eye} alt="" className="w-8 cursor-pointer" onClick={showP} /></span>
 </div>
 
-        <button className="mt-9 bg-blue-600  hover:bg-white transition-shadow w-[100px] h-[30px] rounded-3xl" onClick={handleSubmit}>
+        <button className="mt-9 bg-blue-500  hover:bg-blue-600 transition-shadow w-[100px] h-[30px] rounded-3xl" onClick={handleSubmit}>
          Register
         </button>
        <NavLink to={"/"} className="mt-6">

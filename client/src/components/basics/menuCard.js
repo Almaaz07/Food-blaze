@@ -21,6 +21,7 @@ const Menucard = ({ MenuData  }) => {
   return (
     
     <>
+    {/* <Navbar/> */}
     <New/>
     <Card/>
     <section className="main-card--cointainer">

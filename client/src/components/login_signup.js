@@ -14,6 +14,7 @@ const Login_signup = () => {
     Password: "",
   });
   const [show , setShow]=useState(true)
+  const [user, setUserName]=useState("")
   const showP =(e)=>{
     e.preventDefault();
 setShow(!show)
@@ -22,11 +23,13 @@ setShow(!show)
   const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   const [authenticated, setAuthenticated] = useState(false);
-
+  const handlLogin=(e)=>{
+    loginWithRedirect()
+    toast.success("Logging in through google")
+  }
   const Navigate = useNavigate();
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
     e.preventDefault();
     if(sendDataa.Username=="" || sendDataa.Password==""){
       toast.error("please fill the details")
@@ -36,10 +39,11 @@ else{
     try {
       if (res.status === 200) {
         setAuthenticated(true);
+        setUserName(res.data.Username)
         console.log(authenticated);
       }
-     if(res.status === 401){
-     console.log("error")
+     if(res.status === 404){
+     console.log(res.data)
      }
       else {
         console.log("error while login");
@@ -52,10 +56,7 @@ else{
   toast.success("login Succesfully");
   Navigate("/");
 }
-    
-
-
-  };
+};
 
   const handleChange = (e) => {
     setSendData({ ...sendDataa, [e.target.name]: e.target.value });
@@ -65,30 +66,31 @@ else{
     Navigate("/res")
   }
 
-
+  
   return (
     <>
-     <div className="flex flex-row-reverse w-full h-screen  justify-center items-center">
+     <div className="">
+     <div className="flex flex-row-reverse w-full h-screen bg-[url('./assets/img/login.jpg')] bg-cover bg-no-repeat justify-center items-center">
       <div>
-      <form onSubmit={handleSubmit}>
+      <form >
         <div className="flex justify-center items-center">
           <div className=" w-[390px] backdrop-blur-2xl rounded-r-3xl shadow-2xl h-[470px]  items-center flex flex-col">
-            <h1 className="mt-[40px] font-bold text-3xl">Welcome back 😎</h1>
+            <h1 className="mt-[40px] font-bold text-3xl text-white">Welcome back 😎</h1>
             <label className="mt-[18px] font-semibold text-xl">Username</label>
             <br />
             <input
               type="text"
               name="Username"
               onChange={handleChange}
-              className=" px-3 text-xl font-medium text-white bg-transparent border-2 h-12 w-[290px] rounded-3xl "
+              className=" px-3 text-xl font-bold bg-transparent border-blue-800 border-2 outline-none h-12 w-[290px] rounded-3xl "
             />
             <br />
             <label className="font-semibold text-xl">Password</label> <br />
-            <div className="flex text-xl font-medium text-white bg-transparent border-2 h-12 w-[290px] rounded-3xl ">
-        <input type={!show ? "text" : "password"}  onChange={handleChange}  name="Password" className=" px-3 text-l font-medium text-white bg-transparent outline-none h-12 w-[250px] rounded-3xl "/>
+            <div className="flex text-xl font-medium  bg-transparent border-2 h-12 w-[290px] rounded-3xl border-blue-800 ">
+        <input type={!show ? "text" : "password"}  onChange={handleChange}  name="Password" className=" px-3 text-l font-medium bg-transparent  outline-none h-12 w-[250px] rounded-3xl "/>
           <span className="flex items-center justify-center "><img src={eye} alt="" className="w-8 cursor-pointer" onClick={showP} /></span>
 </div>
-            <button className="mt-9 bg-blue-600 w-[100px] h-[30px] rounded-3xl">
+            <button className="mt-9 bg-blue-600 w-[100px] h-[30px] rounded-3xl" onClick={handleSubmit}>
               Signin
             </button>
             <NavLink to="/register">
@@ -96,7 +98,7 @@ else{
             </NavLink>
             <button
               className="mt-4 bg-white w-[174px] h-[39px] rounded-3xl flex justify-center items-center"
-              onClick={(e) => loginWithRedirect()}>
+              onClick={handlLogin}>
               <span> <img src={Google} alt="" className="w-10 h-10"/> </span> 
              <span className="ml-1"> login With Google</span>
             </button>
@@ -110,6 +112,7 @@ else{
 </div>
 
 
+     </div>
      </div>
     </>
   );

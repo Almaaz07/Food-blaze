@@ -3,8 +3,11 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/feature/cartslice";
 import { loadStripe } from "@stripe/stripe-js/pure";
-// import { json } from "react-router-dom";
-// import "./cart.css";
+import toast from "react-hot-toast";
+
+
+
+
 const Cart = () => {
   const [totalPrice, setPrice] = useState(0);
   const { carts } = useSelector((state) => state.allCart);
@@ -28,6 +31,7 @@ const Cart = () => {
   }, [total]);
 
   const makePay = async () => {
+    toast.success("Redirecting to payment gateway")
     const stripe = await loadStripe(
       "pk_test_51OOKoASJXbsezbMWrjFmarqbxm84SAU92Wv8ZhyVV97KDfsem0Vy2T1EqWfpXBm7s4S4niKQBjPoWqdC7y87LkbL00IWbnTgOO"
     );
@@ -59,16 +63,17 @@ const Cart = () => {
   };
 
   return (
-    <div className="flex flex-col w-full h-screen  bg-[url('./assets/img/cart.jpg')] bg-cover bg-no-repeat  items-center   ">
+    
+    <div className="flex flex-col w-full h-screen  bg-cover bg-[url('./assets/img/cafe.jpg')] bg-no-repeat  items-center   ">
       <div className="shop-cart backdrop-blur-2xl mt-[160px] rounded-3xl">
          <div className="flex gap-[530px] w-[800px] h-20 justify-center items-center">
           <h1 className=" text-xl font-semibold text-white">
             {carts.length} items in Cart{" "}
           </h1>
           {carts.length > 0 ? (
-            <button className="text-white text-xl bg-slate-600 rounded-3xl w-[110px] h-10 ">
-              Empty Cart
-            </button>
+            <span className="ml-3 mt-6 text-white text-xl  rounded-3xl w-[110px] h-10 ">
+              Your Cart
+            </span>
           ) : null}
         </div>
     <div className="mt-4 shadow-2xl w-[800px] rounded-3xl ">
@@ -102,7 +107,7 @@ const Cart = () => {
                           <img
                             src={data.image}
                             alt=""
-                            className=" flex  font-semibold h-[40px] ml-[40px]"
+                            className=" flex hover:cursor-zoom-in hover:scale-150 hover:con transition-all duration-500 font-semibold h-[40px] ml-[40px]"
                           />
                         </div>
                       </td>
@@ -144,9 +149,9 @@ const Cart = () => {
             ""
           ) : (
             <div className=" flex h-14 items-center gap-[50px]">
-              <p className="ml-[500px]">items in Cart :{carts.length}</p>
-              <p>Total Price : {totalPrice} </p>
-              <button className="mr-4" onClick={makePay}>
+              <p className="ml-[400px]">items in Cart :{carts.length}</p>
+              <p>Total Price :<span className="font-bold text-xl font-serif"> {totalPrice}</span> Rs </p>
+              <button className="hover:cursor-zoom-in hover:scale-110 hover:con transition-all duration-500 mr- bg-transparent hover:bg-green-500 rounded-3xl p-2" onClick={makePay}>
                 Checkout
               </button>
             </div>

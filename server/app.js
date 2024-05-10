@@ -5,6 +5,7 @@ const cors = require ("cors");
 const Data = require("./connection/index.js")
 const User = require("./userModel.js");
 require("./connection/index.js")
+const nodemailer = require('nodemailer');
 
 const stripe = require ("stripe")("sk_test_51OOKoASJXbsezbMWUwU1nSPXNwTZ3B5VNBTtvpsH2vqOBQTOKvfsdL9r9poVUIfbAbBeU1YZ7dLxJUGtGRq5Br0600YH6MDHSK")
 const app = express();
@@ -37,7 +38,8 @@ app.post ("/api/create-checkout-session" , async (req,res)=>{
         cancel_url: `${YOUR_DOMAIN}/cancel`,
     })
     res.json({
-        id:session.id
+        id:session.id,
+        
     })
 })
 
@@ -93,7 +95,7 @@ app.post("/login", async (req, res) => {
         expiresIn: "1h",
       });
   
-      res.status(200).json({ token });
+      res.status(200).json({ token , Username });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Server error" });
