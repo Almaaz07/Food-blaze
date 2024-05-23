@@ -1,19 +1,19 @@
 const Menu = [
     {
       id: 1,
-      image: "./images/maggi.jpg",
-      name: "maggi",
+      image: "https://media.istockphoto.com/id/177413384/photo/pasta-with-carbonara.webp?b=1&s=170667a&w=0&k=20&c=o93CBvauiDmKWqFXf2JZMgapGwIvSg-0-i9TGBJ3ULE=",
+      name: "Noodels",
       category: "breakfast",
       amount: 12,
       qnty:0,
       description:
-        "I love Maggi realy oo yues  Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, at consectetur totam voluptatibus quibusdam iusto. Accusamus quas, soluta ipsam autem eius necessitatibus fugiat in . ",
     },
   
     {
       id: 2,
-      image: "images/allupakoida.jpg",
-      name: "allu pakoida",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtxPuCzpfsJtBOVvBGfLPn-WgotEpX7jfrtg&s",
+      name: "Sandwich",
       category: "evening",
       amount: 20,
       qnty:0,
@@ -22,7 +22,7 @@ const Menu = [
     },
     {
       id: 3,
-      image: "images/corn.jpg",
+      image: "https://images.unsplash.com/photo-1511709337289-3facc9c960a6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmFrZWQlMjBjb3JufGVufDB8fDB8fHww",
       name: "corn",
       category: "breakfast",
       amount: 10,

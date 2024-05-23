@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./style.css";
 import Menu from "./menueapi.js";
 import Menucard from "./menuCard";
-import Navbar from "./Navbar";
+import Navbar from "./Navbar.js";
 
 
 const unqList = [

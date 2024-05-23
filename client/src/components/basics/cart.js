@@ -31,9 +31,9 @@ const Cart = () => {
   }, [total]);
 
   const makePay = async () => {
-    toast.success("Redirecting to payment gateway")
+    // toast.success("Redirecting to payment gateway")
     const stripe = await loadStripe(
-      "pk_test_51OOKoASJXbsezbMWrjFmarqbxm84SAU92Wv8ZhyVV97KDfsem0Vy2T1EqWfpXBm7s4S4niKQBjPoWqdC7y87LkbL00IWbnTgOO"
+      "your key"
     );
     const body = {
       products: carts,
@@ -64,7 +64,7 @@ const Cart = () => {
 
   return (
     
-    <div className="flex flex-col w-full h-screen  bg-cover bg-[url('./assets/img/cafe.jpg')] bg-no-repeat  items-center   ">
+    <div className="flex flex-col w-full h-screen  bg-cover bg-[url('./assets/img/login.jpg')] bg-no-repeat  items-center   ">
       <div className="shop-cart backdrop-blur-2xl mt-[160px] rounded-3xl">
          <div className="flex gap-[530px] w-[800px] h-20 justify-center items-center">
           <h1 className=" text-xl font-semibold text-white">

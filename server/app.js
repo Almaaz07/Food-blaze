@@ -5,9 +5,9 @@ const cors = require ("cors");
 const Data = require("./connection/index.js")
 const User = require("./userModel.js");
 require("./connection/index.js")
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 
-const stripe = require ("stripe")("sk_test_51OOKoASJXbsezbMWUwU1nSPXNwTZ3B5VNBTtvpsH2vqOBQTOKvfsdL9r9poVUIfbAbBeU1YZ7dLxJUGtGRq5Br0600YH6MDHSK")
+const stripe = require ("stripe")("your key")
 const app = express();
 
 
@@ -78,13 +78,11 @@ app.post("/login", async (req, res) => {
     const { Username, Password } = req.body;
   
     try {
-      // Check if the user exists
       const user = await User.findOne({ Username });
       if (!user) {
         return res.status(404).json({ message: "User not found" });
       }
   
-      // Check if the password is correct
       const isPasswordValid = await bcrypt.compare(Password, user.Password);
       if (!isPasswordValid) {
         return res.status(401).json({ message: "Invalid password" });

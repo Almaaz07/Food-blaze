@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className=" bg-black h-[350px] text-white rounded-b-3xl mt-8 md:mt-0">
+    <div className="flex flex-col justify-center bg-black h-[350px] text-white mt-8 md:mt-0">
       <div className="flex flex-col md:flex-row justify-between p-8 md:px-32 px-5">
         <div className=" w-full md:w-1/4">
-          <h1 className=" font-semibold text-3xl pb-4">FoodieWeb</h1>
+          <h1 className=" font-semibold text-3xl pb-4 text-green-800"> <i>Food Balze</i> </h1>
           <p className=" text-xl">
             Indulge in a symphony of flavors, where each plate is a canvas for
             culinary excellence.

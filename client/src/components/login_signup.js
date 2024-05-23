@@ -14,7 +14,6 @@ const Login_signup = () => {
     Password: "",
   });
   const [show , setShow]=useState(true)
-  const [user, setUserName]=useState("")
   const showP =(e)=>{
     e.preventDefault();
 setShow(!show)
@@ -31,7 +30,7 @@ setShow(!show)
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(sendDataa.Username=="" || sendDataa.Password==""){
+    if(sendDataa.Username==="" || sendDataa.Password===""){
       toast.error("please fill the details")
     }
 else{
@@ -39,17 +38,17 @@ else{
     try {
       if (res.status === 200) {
         setAuthenticated(true);
-        setUserName(res.data.Username)
         console.log(authenticated);
       }
      if(res.status === 404){
-     console.log(res.data)
+     console.log(res.error)
      }
       else {
         console.log("error while login");
       }
-    } catch (error) {
-      console.log("error", error);
+    } 
+    catch (error) {
+      console.log("error", error.message);
     }
   });
   console.log("verified from backebd", sendDataa);

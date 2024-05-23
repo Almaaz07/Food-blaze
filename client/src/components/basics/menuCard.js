@@ -21,8 +21,7 @@ const Menucard = ({ MenuData  }) => {
   return (
     
     <>
-    {/* <Navbar/> */}
-    <New/>
+    <New className="p-0 m-0"/>
     <Card/>
     <section className="main-card--cointainer">
         {MenuData.map((curelement) => {
@@ -30,8 +29,9 @@ const Menucard = ({ MenuData  }) => {
           const {id , name, amount,category, image, description} = curelement;
           return (
             <>
-              <div className="card-container mb-12" key={id}>
-                <div className="card rounded-3xl">
+
+              <div className="card-container  rounded-2xl mb-12" key={id}>
+                <div className="card rounded-2xl">
                   <div className="cadr-body">
                     <span className="card-number card-circle subtle"> {id}</span>
                     <span className="card-author subtle"></span>
@@ -43,10 +43,10 @@ const Menucard = ({ MenuData  }) => {
                     </span>
                     <div className="card-read"> Read</div>
                   </div>
-                  <img src={image} alt="images" className="card-media hover:cursor-zoom-in hover:scale-125 hover:con transition-all duration-500" />
+                  <img src={image} alt="images" className="card-media hover:cursor-zoom-in hover:scale-110 hover:con transition-all duration-500 w-[300px] h-[200px]" />
                   <h3 className="text-xl font-bold m-4 "> ₹{amount}</h3>
 
-                  <button className="card-tag subtle bg-green-900 hover:text-black-800 hover:bg-green-700 rounded-xl" onClick={()=>send(curelement)}> Add to Cart</button>
+                  <button className="flex float-right b-2 rounded-3xl bg-transparent backdrop-blur-2xl hover:text-black-800 hover:bg-white text-xl px-3 py-2" onClick={()=>send(curelement)}> Add to Cart</button>
                 </div>
               </div>
               

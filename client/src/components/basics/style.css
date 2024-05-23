@@ -26,8 +26,8 @@
   
   .main-card--cointainer {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: px;
+    grid-template-columns: auto auto  auto auto;
+    grid-gap: 1px;
     justify-content: space-around;
   }
   
@@ -45,7 +45,7 @@
   }
   
   .card {
-    background-color: #11693b;
+    background-color: #24734a;
     padding: 30px;
     position: relative;
     box-shadow: 0 0 5px rgba(75, 75, 75, 0.07);
